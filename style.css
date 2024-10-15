@@ -1,0 +1,113 @@
+/*----------Generales---------*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat";
+    background: #fff url(imagenes/fondo-galaxia-estilo-anime.jpg) no-repeat center center /cover fixed ;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,auto);
+    font-size: 14px;
+
+    grid-template-areas:"header   header   header"
+                        "main     main     aside"
+                        "widget-1 widget-1 widget-2"
+                        "footer   footer   footer";
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .main,
+.contenedor .aside,
+.contenedor .footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+/*-------------------HEADER------------------------------------*/
+.contenedor .header {
+    color: #fff;
+    grid-area: header;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.contenedor .header h1 {
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.contenedor .header .menu {
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+}
+
+.contenedor .header .menu a {
+    margin: auto 10px;
+    color: #fff;
+    padding-bottom: 9px;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    font-size: 1em;
+}
+
+.contenedor .header .menu a:hover{
+    border-bottom: 2px solid #000;
+    color: #000;
+}
+
+/*-------------------MAIN------------------------------------*/
+.contenedor .main {
+    grid-area: main;
+    line-height: 2;
+    color:#FFF8DC ;
+}
+
+.contenedor .main h2 {
+    margin-bottom: 20px ;
+}
+
+.contenedor .main section article p{
+    text-align: justify;
+    line-height: 30px;
+}
+
+.contenedor .main .pagina-principal {
+    width: 100%;
+}
+
+.main section article .imagenes-agrupadas {
+    display: flex;
+    width: 100%;
+    height: 530px;
+}
+
+.main section article .imagenes-agrupadas img {
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+
+.main section article .imagenes-agrupadas img:hover {
+    cursor: pointer;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
